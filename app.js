@@ -1,32 +1,38 @@
-//
+"use strict"
 const readline = require('readline');
+var Decimal = require('decimal.js');
+
+Decimal.config({precision: 10000});
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-function factorial(x) {
-  if (x == 0) {
-    return 1;
-  }
-  return x * factorial(x - 1);
-}
+ function factiorial(x) {
+       var rval = 1;
+       for (var i = 2; i <= x; i++)
+           rval = rval * i;
+       return rval;
+   }
 
-function calcE(n) {
-  let euler, itr;
-  euler = 0
-  itr = Number(n)
-    for (var i = 0; i < itr+1; i++) {
-      let fact = factorial(i)
-      euler += 1/fact
-      //console.log(`factorial of ${i}: ${1/fact}`)
-    }
-  return euler;
-}
+ function euler(n){
+   let zero = new Decimal(0);
+   let one = new Decimal(1);
+   let rval;
+
+   for (let i = 0; i <= n; i++){
+     let fval = new Decimal(factiorial(i));
+     let invert = one.dividedBy(fval)
+     zero = zero.plus(invert)
+   }
+   rval = zero.toFixed(Number(n))
+   return rval;
+ }
+
 
 rl.question('Enter n value: ', (n) => {
-  let e = calcE(n)
+  let e = euler(n)
   console.log(`E: ${e}`)
   rl.close()
 });
