@@ -1,0 +1,23 @@
+{
+  "name": "n-th-digit-of-e",
+  "version": "1.0.0",
+  "description": "Calculation of Euler number to nth decimal point",
+  "main": "app.js",
+  "dependencies": {
+    "decimal.js": "^7.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitridhal/n-th-digit-of-e.git"
+  },
+  "author": "Sumit Ridhal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumitridhal/n-th-digit-of-e/issues"
+  },
+  "homepage": "https://github.com/sumitridhal/n-th-digit-of-e#readme"
+}
